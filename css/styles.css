@@ -214,9 +214,20 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 .hero-shape {
   display: grid;
-  gap: 22px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 16px;
+  row-gap: 22px;
   padding: 22px;
   background: var(--shape);
+}
+
+.hero-copy { grid-column: span 7; }
+.hero-photo { grid-column: span 5; }
+
+@media (max-width: 799px) {
+  .hero-copy,
+  .hero-photo { grid-column: span 12; }
+  .hero-photo { order: -1; }
 }
 
 .eyebrow {
@@ -250,7 +261,6 @@ h1 {
 }
 
 .hero-photo {
-  order: -1;
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
@@ -288,10 +298,15 @@ h1 {
   padding-inline: var(--edge);
 }
 
-.col-12,
-.col-7,
-.col-6,
-.col-5 { grid-column: span 12; }
+.col-12 { grid-column: span 12; }
+.col-7 { grid-column: span 7; }
+.col-6 { grid-column: span 6; }
+.col-5 { grid-column: span 5; }
+
+@media (max-width: 799px) {
+  .col-7,
+  .col-5 { grid-column: span 12; }
+}
 
 section { padding: 96px 0 12px; }
 
@@ -654,20 +669,12 @@ h2 {
 @media (min-width: 800px) {
   .hero { padding-top: 40px; }
 
-  .col-6 { grid-column: span 6; }
-  .col-7 { grid-column: span 7; }
-  .col-5 { grid-column: span 5; }
-
   .reviews-go { align-self: end; min-height: 112px; }
 
   .hero-shape {
-    grid-template-columns: 1.15fr 0.85fr;
     align-items: center;
-    gap: 36px;
     padding: 28px;
   }
-
-  .hero-photo { order: 0; }
 
   .filters { flex-wrap: wrap; overflow: visible; }
 

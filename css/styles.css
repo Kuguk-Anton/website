@@ -79,9 +79,24 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .price-row,
 .faq-item,
 .video-frame,
-.site-footer {
+.site-footer,
+.reviews-card {
   border: 1px solid var(--line);
 }
+
+.reviews-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px 28px;
+  padding: 22px 24px;
+  border-radius: var(--radius);
+  background: var(--shape);
+}
+
+.reviews-card h2 { margin-bottom: 8px; }
+.reviews-card p { margin: 0; max-width: 36rem; color: var(--muted); }
 
 .hero {
   padding: 36px var(--edge) 20px;

@@ -8,8 +8,7 @@
   --chip: #222222;
   --accent: #e36b54;
   --on-accent: #ffffff;
-  --max: 1080px;
-  --edge: 20px;
+  --edge: 40px;
   --gutter: 16px;
   --radius: 10px;
   --font: "Manrope", "Segoe UI", sans-serif;
@@ -80,23 +79,76 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .faq-item,
 .video-frame,
 .site-footer,
-.reviews-card {
+.reviews {
   border: 1px solid var(--line);
 }
 
-.reviews-card {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px 28px;
-  padding: 22px 24px;
+.reviews {
+  position: relative;
+  display: grid;
+  align-items: end;
+  gap: 36px;
+  min-height: 280px;
+  padding: 56px 32px 32px;
   border-radius: var(--radius);
   background: var(--shape);
+  text-decoration: none;
 }
 
-.reviews-card h2 { margin-bottom: 8px; }
-.reviews-card p { margin: 0; max-width: 36rem; color: var(--muted); }
+.reviews:hover { border-color: rgba(227, 107, 84, 0.85); }
+
+.reviews .frame { pointer-events: none; }
+
+.reviews-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.reviews h2 { margin-bottom: 12px; font-size: clamp(2.4rem, 6vw, 4.2rem); }
+
+.reviews-lead {
+  max-width: 28rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.reviews-go {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  justify-self: start;
+  min-height: 72px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.reviews-go svg {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.reviews-go b,
+.reviews-go small { display: block; }
+
+.reviews-go b { font-size: 1rem; line-height: 1.2; }
+
+.reviews-go small {
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.82rem;
+}
 
 .hero {
   padding: 36px var(--edge) 20px;
@@ -105,8 +157,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero-shape {
   display: grid;
   gap: 22px;
-  width: min(var(--max), 100%);
-  margin-inline: auto;
   padding: 22px;
   background: var(--shape);
 }
@@ -174,15 +224,10 @@ h1 {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: var(--gutter);
-  row-gap: 20px;
-  width: min(var(--max), calc(100% - 2 * var(--edge)));
-  margin-inline: auto;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding-inline: var(--edge);
 }
-
-.col-6 { grid-column: span 12; }
-.col-12 { grid-column: span 12; }
 
 section { padding: 96px 0 12px; }
 
@@ -343,8 +388,7 @@ h2 {
 .site-footer {
   display: grid;
   gap: 16px;
-  width: min(var(--max), calc(100% - 2 * var(--edge)));
-  margin: 96px auto 36px;
+  margin: 96px var(--edge) 36px;
   padding: 18px;
   background: var(--shape);
 }
@@ -542,9 +586,24 @@ h2 {
 }
 
 @media (min-width: 800px) {
-  :root { --edge: 32px; }
-
   .hero { padding-top: 40px; }
+
+  .works {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .works .section-head,
+  .works .empty-videos {
+    grid-column: 1 / -1;
+  }
+
+  .reviews {
+    grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.7fr);
+    min-height: 360px;
+    padding: 72px 64px 48px;
+  }
+
+  .reviews-go { justify-self: end; width: 100%; }
 
   .hero-shape {
     grid-template-columns: 1.15fr 0.85fr;
@@ -554,8 +613,6 @@ h2 {
   }
 
   .hero-photo { order: 0; }
-
-  .col-6 { grid-column: span 6; }
 
   .filters { flex-wrap: wrap; overflow: visible; }
 

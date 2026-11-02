@@ -7,9 +7,9 @@
   --cyan: #8fd9d4;
   --ink: #171410;
   --header: rgba(18, 16, 14, 0.82);
-  --max: 1120px;
-  --edge: 16px;
-  --gutter: 12px;
+  --max: 1240px;
+  --edge: 20px;
+  --gutter: 16px;
   --font: "Manrope", "Segoe UI", sans-serif;
   --display: "Unbounded", "Manrope", sans-serif;
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
@@ -32,8 +32,8 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   background:
-    radial-gradient(880px 520px at 8% -10%, rgba(255, 122, 102, 0.16), transparent 58%),
-    radial-gradient(640px 420px at 18% 22%, rgba(143, 217, 212, 0.08), transparent 60%),
+    radial-gradient(720px 480px at 18% 12%, rgba(255, 110, 90, 0.22), transparent 62%),
+    radial-gradient(540px 360px at 78% 88%, rgba(143, 217, 212, 0.08), transparent 70%),
     var(--bg);
 }
 
@@ -175,9 +175,9 @@ h2,
 }
 
 h1 {
-  margin-bottom: 16px;
-  font-size: clamp(2.7rem, 8vw, 5.6rem);
-  line-height: 0.9;
+  margin-bottom: 18px;
+  font-size: clamp(3rem, 10.4vw, 9.4rem);
+  line-height: 0.86;
 }
 
 h2 {
@@ -196,7 +196,7 @@ h3 {
 }
 
 .hero {
-  padding: 12px 0 64px;
+  padding: 8px 0 72px;
 }
 
 .hero-photo {
@@ -207,11 +207,8 @@ h3 {
 .hero-photo img {
   display: block;
   width: 100%;
-  border-radius: 28px;
-  box-shadow:
-    var(--shadow),
-    -12px 16px 0 rgba(143, 217, 212, 0.16),
-    14px -12px 0 rgba(255, 122, 102, 0.16);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
 }
 
 .hero-photo figcaption {
@@ -227,19 +224,23 @@ h3 {
 }
 
 .hero-copy {
-  align-self: end;
+  align-self: center;
 }
 
 .usp {
-  max-width: 36rem;
-  margin-bottom: 10px;
-  color: var(--muted);
-  font-size: 1.12rem;
+  max-width: 34rem;
+  margin-bottom: 14px;
+  color: var(--paper);
+  font-size: 1.2rem;
+  line-height: 1.45;
 }
 
 .disciplines {
   margin-bottom: 0;
+  color: var(--coral);
+  font-size: 0.95rem;
   font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 section {
@@ -251,7 +252,6 @@ section {
   padding-bottom: 72px;
 }
 
-.section-note,
 .faq-item p,
 .legal,
 .footer-meta,
@@ -259,18 +259,11 @@ section {
   color: var(--muted);
 }
 
-.section-note,
 .faq-item p,
 .footer-meta,
 .instagram-line,
 .legal {
   margin-bottom: 0;
-}
-
-.video-card p {
-  margin: 10px 0 0;
-  font-size: 0.92rem;
-  font-weight: 600;
 }
 
 .video-frame {
@@ -279,11 +272,11 @@ section {
   place-items: center;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 18px;
+  border: 1px solid rgba(244, 239, 232, 0.2);
+  border-radius: 16px;
   background:
-    radial-gradient(140px 90px at 70% 35%, rgba(255, 122, 102, 0.28), transparent 70%),
-    #1a1714;
+    linear-gradient(180deg, rgba(255, 122, 102, 0.16), transparent 42%),
+    #1c1815;
 }
 
 .video-frame iframe,
@@ -307,11 +300,12 @@ section {
 }
 
 .video-play {
-  width: 46px;
-  height: 46px;
-  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: rgba(18, 16, 14, 0.55);
+  background: var(--paper);
 }
 
 .video-play::before {
@@ -319,15 +313,34 @@ section {
   display: block;
   width: 0;
   height: 0;
-  margin: 14px 0 0 18px;
+  margin-left: 3px;
   border-style: solid;
-  border-width: 9px 0 9px 13px;
-  border-color: transparent transparent transparent var(--paper);
+  border-width: 8px 0 8px 13px;
+  border-color: transparent transparent transparent var(--ink);
+}
+
+.video-label {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  color: var(--paper);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 .faq-item {
-  padding-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: 6px;
+  padding-top: 20px;
   border-top: 1px solid var(--line);
+}
+
+.faq-item h3,
+.faq-item p {
+  grid-column: span 12;
 }
 
 .faq-item a,
@@ -337,8 +350,9 @@ section {
 
 footer {
   scroll-margin-top: 84px;
-  padding: 12px 0 48px;
+  padding: 28px 0 56px;
   border-top: 1px solid var(--line);
+  background: #0e0c0b;
 }
 
 .phone-xl {
@@ -424,11 +438,12 @@ footer {
     padding-bottom: 96px;
   }
 
-  .col-lg-5 { grid-column: span 5; }
-  .col-lg-7 { grid-column: span 7; }
+  .col-lg-6 { grid-column: span 6; }
 
-  .hero-copy {
-    padding-bottom: 8px;
+  .faq-item h3 { grid-column: span 5; }
+  .faq-item p {
+    grid-column: span 7;
+    align-self: center;
   }
 
   #works,

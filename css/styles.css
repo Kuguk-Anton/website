@@ -1,11 +1,11 @@
 :root {
-  --bg: #1c1a18;
-  --shape: #2a2623;
-  --paper: #f4efe8;
-  --muted: #b7aea4;
-  --line: rgba(244, 239, 232, 0.16);
-  --ink: #141210;
-  --chip: #35312d;
+  --bg: #0c0c0c;
+  --shape: #141414;
+  --paper: #f5f5f5;
+  --muted: #a3a3a3;
+  --line: rgba(255, 255, 255, 0.12);
+  --ink: #0c0c0c;
+  --chip: #222222;
   --accent: #e36b54;
   --on-accent: #ffffff;
   --max: 1080px;
@@ -74,6 +74,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .skip:focus { transform: none; }
 
 .shape { border-radius: var(--radius); }
+
+.hero-shape,
+.price-row,
+.faq-item,
+.video-frame,
+.site-footer {
+  border: 1px solid var(--line);
+}
 
 .hero {
   padding: 28px var(--edge) 8px;

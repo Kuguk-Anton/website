@@ -84,7 +84,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 .hero {
-  padding: 28px var(--edge) 8px;
+  padding: 36px var(--edge) 20px;
 }
 
 .hero-shape {
@@ -169,7 +169,7 @@ h1 {
 .col-6 { grid-column: span 12; }
 .col-12 { grid-column: span 12; }
 
-section { padding: 56px 0 12px; }
+section { padding: 96px 0 12px; }
 
 .section-head { margin-bottom: 8px; }
 
@@ -329,7 +329,7 @@ h2 {
   display: grid;
   gap: 16px;
   width: min(var(--max), calc(100% - 2 * var(--edge)));
-  margin: 48px auto 28px;
+  margin: 96px auto 36px;
   padding: 18px;
   background: var(--shape);
 }

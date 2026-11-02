@@ -697,7 +697,17 @@ h2 {
     padding: 15px 5px 15px;
   }
 
-  .hero-copy .eyebrow { order: 1; }
+  .hero-copy h1 { margin-bottom: 12px; }
+
+  .hero-copy .eyebrow {
+    order: 1;
+    margin: 0 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: 0.84rem;
+    font-weight: 500;
+  }
+
   .hero-copy .usp { order: 2; }
   .hero-copy .hero-actions { order: 3; }
 

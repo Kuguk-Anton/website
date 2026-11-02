@@ -153,60 +153,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .shape { border-radius: var(--radius); }
 
 .hero-shape,
-.reviews-card,
 .price-row,
 .faq-item,
 .video-frame,
 .site-footer {
   border: 1px solid var(--line);
-}
-
-.reviews-kicker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 12px;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.reviews-lead {
-  margin: 12px 0 0;
-  color: var(--muted);
-}
-
-.reviews-go {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  align-self: stretch;
-  min-height: 72px;
-  padding: 16px 18px;
-  border-radius: var(--radius);
-  background: var(--accent);
-  color: var(--on-accent);
-  text-decoration: none;
-}
-
-.reviews-go svg {
-  flex: none;
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-}
-
-.reviews-go b,
-.reviews-go small { display: block; }
-
-.reviews-go b { font-size: 1rem; line-height: 1.2; }
-
-.reviews-go small {
-  margin-top: 3px;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 0.84rem;
 }
 
 .cols {
@@ -320,15 +271,6 @@ h1 {
   display: grid;
   grid-template-columns: subgrid;
   row-gap: 16px;
-}
-
-.reviews-card {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: var(--gutter);
-  align-items: center;
-  padding: 16px;
-  border-radius: var(--radius);
-  background: var(--shape);
 }
 
 .col-12,
@@ -719,7 +661,6 @@ h2 {
 
   .hero-copy { padding: 15px 5px 15px; }
 
-  .reviews-card,
   .site-footer,
   .price-row { padding: 10px; }
 }
@@ -727,8 +668,7 @@ h2 {
 @media (min-width: 800px) {
   .hero { padding-top: 40px; }
 
-  .hero-shape,
-  .reviews-card { padding: 28px; }
+  .hero-shape { padding: 28px; }
 
   .hero-copy { grid-column: span 7; order: 0; }
   .hero-photo { grid-column: span 5; order: 0; }
@@ -736,8 +676,6 @@ h2 {
   .col-6 { grid-column: span 6; }
   .col-7 { grid-column: span 7; }
   .col-5 { grid-column: span 5; }
-
-  .reviews-go { align-self: stretch; }
 
   .filters { flex-wrap: wrap; overflow: visible; }
 

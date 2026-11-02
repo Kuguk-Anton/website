@@ -10,7 +10,7 @@
       window.setTimeout(function () {
         document.documentElement.classList.remove("is-loading");
         preloader.remove();
-      }, reduceMotion ? 0 : 460);
+      }, reduceMotion ? 0 : 240);
     }
 
     if (reduceMotion) {
@@ -24,10 +24,10 @@
           recText.textContent = phrase.slice(0, index);
           if (index >= phrase.length) {
             window.clearInterval(timer);
-            window.setTimeout(closePreloader, 720);
+            window.setTimeout(closePreloader, 280);
           }
-        }, 78);
-      }, 280);
+        }, 40);
+      }, 80);
     }
   } else {
     document.documentElement.classList.remove("is-loading");

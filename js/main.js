@@ -135,26 +135,7 @@
     }, true);
   }
 
-  var themeButton = document.querySelector("[data-theme-toggle]");
-
-  function applyTheme(theme) {
-    var light = theme === "light";
-    document.documentElement.setAttribute("data-theme", light ? "light" : "dark");
-    try { localStorage.setItem("theme", light ? "light" : "dark"); } catch (e) {}
-    if (themeButton) {
-      themeButton.setAttribute("aria-pressed", light ? "true" : "false");
-      themeButton.setAttribute("aria-label", light ? "Тёмная тема" : "Светлая тема");
-    }
-    var themeMeta = document.querySelector('meta[name="theme-color"]');
-    if (themeMeta) themeMeta.setAttribute("content", light ? "#f3efe8" : "#0e0d0c");
-  }
-
-  if (themeButton) {
-    applyTheme(document.documentElement.getAttribute("data-theme") || "dark");
-    themeButton.addEventListener("click", function () {
-      applyTheme(document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light");
-    });
-  }
+  try { localStorage.removeItem("theme"); } catch (e) {}
 
   document.querySelectorAll(".video-frame").forEach(mountVideo);
 

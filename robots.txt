@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kuguk-anton.github.io/website/sitemap.xml

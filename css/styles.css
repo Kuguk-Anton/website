@@ -106,7 +106,7 @@ body {
   color: var(--paper);
   font-family: var(--font);
   font-size: 1.02rem;
-  line-height: 1.5;
+  line-height: 1.65;
   background: var(--bg);
 }
 
@@ -202,7 +202,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0 0 20px;
+  margin: 0 0 28px;
   color: var(--muted);
   font-size: 1rem;
   font-weight: 600;
@@ -218,7 +218,7 @@ h1, h2, .price, .num {
 }
 
 h1 {
-  margin-bottom: 22px;
+  margin-bottom: 28px;
   font-size: clamp(1.75rem, 6vw, 4.4rem);
   line-height: 0.95;
 }
@@ -227,7 +227,7 @@ h1 {
   margin-bottom: 0;
   color: var(--muted);
   font-size: 1.08rem;
-  line-height: 1.65;
+  line-height: 1.75;
 }
 
 .hero-photo {
@@ -242,7 +242,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 28px;
+  margin-top: 36px;
 }
 
 .btn {
@@ -271,7 +271,7 @@ h1 {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: subgrid;
-  row-gap: 16px;
+  row-gap: 24px;
 }
 
 .col-12,
@@ -282,9 +282,9 @@ h1 {
   min-width: 0;
 }
 
-section { padding: 96px 0 12px; }
+section { padding: 140px 0 24px; }
 
-.section-head { margin-bottom: 8px; }
+.section-head { margin-bottom: 28px; }
 
 h2 {
   margin-bottom: 0;
@@ -298,7 +298,7 @@ h2 {
   display: flex;
   flex-wrap: nowrap;
   gap: 8px;
-  margin-top: 18px;
+  margin-top: 28px;
   min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
@@ -401,7 +401,7 @@ h2 {
 .price { color: var(--paper); font-size: 1.15rem; }
 .term { font-size: 0.9rem; }
 
-.faq-list { display: grid; gap: 8px; }
+.faq-list { display: grid; gap: 16px; }
 
 .faq-item {
   border-radius: var(--radius);
@@ -449,7 +449,7 @@ h2 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 14px;
-  margin: 96px 0 36px;
+  margin: 140px 0 36px;
   padding: 16px;
   background: var(--shape);
 }

@@ -1,4 +1,38 @@
 (function () {
+  var preloader = document.querySelector(".preloader");
+  var recText = document.querySelector("[data-rec-text]");
+  if (preloader && recText) {
+    var phrase = "Антоша Как Дела ?";
+    var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function closePreloader() {
+      preloader.classList.add("is-done");
+      window.setTimeout(function () {
+        document.documentElement.classList.remove("is-loading");
+        preloader.remove();
+      }, reduceMotion ? 0 : 460);
+    }
+
+    if (reduceMotion) {
+      recText.textContent = phrase;
+      window.setTimeout(closePreloader, 350);
+    } else {
+      var index = 0;
+      window.setTimeout(function () {
+        var timer = window.setInterval(function () {
+          index += 1;
+          recText.textContent = phrase.slice(0, index);
+          if (index >= phrase.length) {
+            window.clearInterval(timer);
+            window.setTimeout(closePreloader, 720);
+          }
+        }, 78);
+      }, 280);
+    }
+  } else {
+    document.documentElement.classList.remove("is-loading");
+  }
+
   var header = document.querySelector(".site-header");
   var year = document.querySelector("[data-year]");
   var copyButton = document.querySelector("[data-copy-phone]");

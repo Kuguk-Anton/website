@@ -2,6 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <script>document.documentElement.classList.add("is-loading");</script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--
       Публичный адрес: https://kuguk-anton.github.io/website/
@@ -162,6 +163,17 @@
     </script>
   </head>
   <body>
+    <div class="preloader" role="status" aria-live="polite" aria-label="Запись">
+      <span class="frame frame-tl" aria-hidden="true"></span>
+      <span class="frame frame-tr" aria-hidden="true"></span>
+      <span class="frame frame-bl" aria-hidden="true"></span>
+      <span class="frame frame-br" aria-hidden="true"></span>
+      <p class="rec">
+        <span class="rec-dot" aria-hidden="true"></span>
+        <span data-rec-text></span>
+      </p>
+    </div>
+
     <a class="skip" href="#content">К содержанию</a>
 
     <main id="content">

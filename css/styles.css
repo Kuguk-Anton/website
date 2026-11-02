@@ -711,6 +711,8 @@ h2 {
 @media (max-width: 799px) {
   :root { --edge: 10px; }
 
+  .hero { padding-top: 10px; }
+
   .hero-shape {
     padding: 10px 10px 0;
     row-gap: 0;

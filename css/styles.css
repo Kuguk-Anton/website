@@ -153,6 +153,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .shape { border-radius: var(--radius); }
 
 .hero-shape,
+.reviews-card,
 .price-row,
 .faq-item,
 .video-frame,
@@ -230,9 +231,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hero-shape {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: subgrid;
-  align-items: start;
-  padding-block: 22px;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  row-gap: 20px;
+  align-items: center;
+  padding: 16px;
   background: var(--shape);
 }
 
@@ -262,7 +265,7 @@ h1, h2, .price, .num {
 
 h1 {
   margin-bottom: 12px;
-  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-size: clamp(1.75rem, 6vw, 4.4rem);
   line-height: 0.95;
 }
 
@@ -307,6 +310,14 @@ h1 {
   display: grid;
   grid-template-columns: subgrid;
   row-gap: 16px;
+}
+
+.reviews-card {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gutter);
+  align-items: center;
+  padding: 16px;
+  background: var(--shape);
 }
 
 .col-12,
@@ -481,15 +492,17 @@ h2 {
 .faq-answer p { margin: 0; color: var(--muted); }
 
 .site-footer {
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
   margin: 96px 0 36px;
-  padding-block: 18px;
+  padding: 16px;
   background: var(--shape);
 }
 
 .footer-dev,
 .socials,
-.legal { grid-column: 1 / -1; }
+.legal { grid-column: auto; min-width: 0; }
 
 .footer-dev {
   display: flex;
@@ -688,16 +701,17 @@ h2 {
 @media (min-width: 800px) {
   .hero { padding-top: 40px; }
 
-  .hero-shape { padding-block: 28px; }
+  .hero-shape,
+  .reviews-card { padding: 28px; }
 
-  .hero-copy { grid-column: 1 / 8; order: 0; }
-  .hero-photo { grid-column: 8 / 13; order: 0; }
+  .hero-copy { grid-column: span 7; order: 0; }
+  .hero-photo { grid-column: span 5; order: 0; }
 
   .col-6 { grid-column: span 6; }
-  .col-7 { grid-column: 1 / 8; }
-  .col-5 { grid-column: 8 / 13; }
+  .col-7 { grid-column: span 7; }
+  .col-5 { grid-column: span 5; }
 
-  .reviews-go { align-self: end; min-height: 112px; }
+  .reviews-go { align-self: stretch; }
 
   .filters { flex-wrap: wrap; overflow: visible; }
 
@@ -710,11 +724,14 @@ h2 {
     text-align: right;
   }
 
-  .site-footer { align-items: center; }
+  .site-footer {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    padding: 20px 24px;
+  }
 
-  .footer-dev { grid-column: 1 / 9; }
-  .socials { grid-column: 9 / 13; justify-self: end; }
   .legal { grid-column: 1 / -1; }
+  .socials { justify-self: end; }
 }
 
 .preloader {

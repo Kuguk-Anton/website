@@ -108,26 +108,50 @@
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "Где работает Антон Кугук?",
+                "name": "Можно снять всё на телефон?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "В Москве, Россия."
+                  "text": "Телефон тянет бытовую картинку. Для репортажа, эдита и экспертного REELS нужен нормальный кадр, звук и свет. Иначе монтаж не спасёт."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Какие услуги делает видеограф Антон Кугук?",
+                "name": "Монтаж входит в съёмку?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Репортажи, эдиты, экспертные и разговорные REELS, motion-design и цветокоррекция."
+                  "text": "Съёмка и монтаж считаются отдельно. Эдит, motion и цветокоррекция тоже отдельные задачи. Что входит в работу, фиксируется до старта."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Как связаться с Антоном Кугуком?",
+                "name": "Когда будет готово?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Напишите в Telegram @kugukanton или позвоните по телефону +7 903 431-63-53."
+                  "text": "Срок зависит от длины, количества исходников и правок. Его называют до начала, а не после съёмки."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Цветокоррекцию считаете отдельно?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Да. Цвет — отдельная услуга. Если он нужен внутри эдита или репортажа, это видно в задаче заранее."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Можно без сценария?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Можно, если понятно, что человек должен понять из ролика. Без этой фразы съёмка превращается в набор кадров."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Исходники отдадите?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Готовый ролик отдаётся всегда. Исходники — только если это отдельно проговорено до работы."
                 }
               }
             ]
@@ -141,42 +165,32 @@
 
     <main id="content">
       <section class="hero" id="top" aria-labelledby="person-name">
-        <img
-          class="avatar"
-          src="assets/anton.jpg"
-          width="470"
-          height="400"
-          alt="Портрет Антона Кугука, видеографа из Москвы"
-          fetchpriority="high"
-          decoding="async"
-        >
-        <h1 id="person-name">Антон Кугук</h1>
-        <p class="usp">Съёмка, монтаж и motion. Москва.</p>
-        <ul class="socials">
-          <li>
-            <a href="https://t.me/kugukanton" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-              <span class="sr-only">, откроется в новой вкладке</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/kuguk.mov/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" aria-describedby="meta-note">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.6"/><path d="M17.4 6.7h.01"/></svg>
-              <span class="sr-only">, откроется в новой вкладке</span>
-            </a>
-          </li>
-          <li>
-            <a href="tel:+79034316353" aria-label="Позвонить">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v2.2a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 1.2h2.2a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.1 9.1a16 16 0 0 0 6 6l1.5-1.5a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2.2Z"/></svg>
-            </a>
-          </li>
-        </ul>
+        <div class="shape hero-shape">
+          <div class="hero-copy">
+            <p class="eyebrow">Видеограф · Москва</p>
+            <h1 id="person-name">Антон Кугук</h1>
+            <p class="usp">Собираю ролик, который досматривают: репортаж с площадки, эдит, экспертный REELS, motion и цвет.</p>
+          </div>
+          <img
+            class="hero-photo"
+            src="assets/anton.jpg"
+            width="470"
+            height="400"
+            alt="Портрет Антона Кугука, видеографа из Москвы"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://t.me/kugukanton" target="_blank" rel="noopener noreferrer">Написать в Telegram<span class="sr-only">, откроется в новой вкладке</span></a>
+          <a class="btn btn-ghost" href="tel:+79034316353">Позвонить</a>
+        </div>
       </section>
 
       <section id="works" aria-labelledby="works-title">
         <div class="grid">
           <div class="col-12 section-head">
-            <h2 id="works-title">Видео</h2>
+            <h2 id="works-title">Мои работы</h2>
             <div class="filters" role="toolbar" aria-label="Разделы видео">
               <button type="button" class="is-active" data-filter="all" aria-pressed="true">Все</button>
               <button type="button" data-filter="reportage" aria-pressed="false">Репортажи</button>
@@ -229,25 +243,60 @@
           <div class="col-12 section-head">
             <h2 id="prices-title">Стоимость</h2>
           </div>
-          <article class="col-6 price-card">
-            <h3>Репортажи</h3>
-            <p class="price">По запросу</p>
+          <article class="col-12 price-row">
+            <span class="num" aria-hidden="true">01</span>
+            <div>
+              <h3>Репортажи</h3>
+              <p>Съёмка события и сборка в ролик.</p>
+            </div>
+            <div class="price-meta">
+              <p class="price">По запросу</p>
+              <p class="term">Срок по задаче</p>
+            </div>
           </article>
-          <article class="col-6 price-card">
-            <h3>Эдиты</h3>
-            <p class="price">По запросу</p>
+          <article class="col-12 price-row">
+            <span class="num" aria-hidden="true">02</span>
+            <div>
+              <h3>Эдиты</h3>
+              <p>Монтаж уже снятого материала.</p>
+            </div>
+            <div class="price-meta">
+              <p class="price">По запросу</p>
+              <p class="term">Срок по задаче</p>
+            </div>
           </article>
-          <article class="col-6 price-card">
-            <h3>Экспертные и разговорные REELS</h3>
-            <p class="price">По запросу</p>
+          <article class="col-12 price-row">
+            <span class="num" aria-hidden="true">03</span>
+            <div>
+              <h3>Экспертные и разговорные REELS</h3>
+              <p>Короткий ролик, в котором человек говорит по делу.</p>
+            </div>
+            <div class="price-meta">
+              <p class="price">По запросу</p>
+              <p class="term">Срок по задаче</p>
+            </div>
           </article>
-          <article class="col-6 price-card">
-            <h3>Motion-design</h3>
-            <p class="price">По запросу</p>
+          <article class="col-12 price-row">
+            <span class="num" aria-hidden="true">04</span>
+            <div>
+              <h3>Motion-design</h3>
+              <p>Титры, плашки и графика в кадре.</p>
+            </div>
+            <div class="price-meta">
+              <p class="price">По запросу</p>
+              <p class="term">Срок по задаче</p>
+            </div>
           </article>
-          <article class="col-6 price-card">
-            <h3>Цветокоррекция</h3>
-            <p class="price">По запросу</p>
+          <article class="col-12 price-row">
+            <span class="num" aria-hidden="true">05</span>
+            <div>
+              <h3>Цветокоррекция</h3>
+              <p>Цвет, из которого ролик выглядит цельным.</p>
+            </div>
+            <div class="price-meta">
+              <p class="price">По запросу</p>
+              <p class="term">Срок по задаче</p>
+            </div>
           </article>
         </div>
       </section>
@@ -255,34 +304,115 @@
       <section id="faq" aria-labelledby="faq-title">
         <div class="grid">
           <div class="col-12 section-head">
-            <h2 id="faq-title">Частые вопросы</h2>
+            <h2 id="faq-title">ЧАВО</h2>
           </div>
-          <article class="col-12 faq-item">
-            <h3>Где работает Антон Кугук?</h3>
-            <p>В Москве, Россия.</p>
-          </article>
-          <article class="col-12 faq-item">
-            <h3>Какие услуги делает видеограф Антон Кугук?</h3>
-            <p>Репортажи, эдиты, экспертные и разговорные REELS, motion-design и цветокоррекция.</p>
-          </article>
-          <article class="col-12 faq-item">
-            <h3>Как связаться с Антоном Кугуком?</h3>
-            <p>Напишите в Telegram <a href="https://t.me/kugukanton" target="_blank" rel="noopener noreferrer">@kugukanton</a> или позвоните по телефону <a href="tel:+79034316353">+7 903 431-63-53</a>.</p>
-          </article>
+          <div class="col-12 faq-list">
+            <div class="faq-item">
+              <button type="button" aria-expanded="false">
+                <span>Можно снять всё на телефон?</span>
+                <svg class="faq-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>Телефон тянет бытовую картинку. Для репортажа, эдита и экспертного REELS нужен нормальный кадр, звук и свет. Иначе монтаж не спасёт.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" aria-expanded="false">
+                <span>Монтаж входит в съёмку?</span>
+                <svg class="faq-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>Съёмка и монтаж считаются отдельно. Эдит, motion и цветокоррекция тоже отдельные задачи. Что входит в работу, фиксируется до старта.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" aria-expanded="false">
+                <span>Когда будет готово?</span>
+                <svg class="faq-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>Срок зависит от длины, количества исходников и правок. Его называют до начала, а не после съёмки.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" aria-expanded="false">
+                <span>Цветокоррекцию считаете отдельно?</span>
+                <svg class="faq-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>Да. Цвет — отдельная услуга. Если он нужен внутри эдита или репортажа, это видно в задаче заранее.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" aria-expanded="false">
+                <span>Можно без сценария?</span>
+                <svg class="faq-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>Можно, если понятно, что человек должен понять из ролика. Без этой фразы съёмка превращается в набор кадров.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" aria-expanded="false">
+                <span>Исходники отдадите?</span>
+                <svg class="faq-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>Готовый ролик отдаётся всегда. Исходники — только если это отдельно проговорено до работы.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer id="discuss">
-      <div class="grid">
-        <div class="col-12 footer-cta">
-          <h2>Есть задача — давайте обсудим</h2>
-          <p id="meta-note" class="legal">
-            * Компания Meta (соцсети Facebook и Instagram) признана экстремистской, и её деятельность запрещена в РФ.
-          </p>
+    <footer class="shape site-footer">
+      <div class="footer-dev">
+        <button type="button" class="initials" data-open-dev aria-haspopup="dialog">АМ</button>
+        <p>Разработал — Марущак Артемий Игоревич</p>
+      </div>
+      <ul class="socials">
+        <li>
+          <a href="https://www.instagram.com/kuguk.mov/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" aria-describedby="meta-note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.6"/><path d="M17.4 6.7h.01"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://t.me/kugukanton_portfolio" target="_blank" rel="noopener noreferrer" aria-label="Telegram-канал">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </a>
+        </li>
+      </ul>
+      <p id="meta-note" class="legal">* Компания Meta (соцсети Facebook и Instagram) признана экстремистской, и её деятельность запрещена в РФ.</p>
+    </footer>
+
+    <dialog class="dev-panel" id="dev-panel" aria-labelledby="dev-name">
+      <button type="button" class="dev-close" data-close-dev aria-label="Закрыть">×</button>
+      <div class="dev-head">
+        <span class="initials initials-lg" aria-hidden="true">АМ</span>
+        <div>
+          <h2 id="dev-name">Марущак Артемий Игоревич</h2>
+          <p>Веб-разработчик</p>
         </div>
       </div>
-    </footer>
+      <a class="dev-row" href="https://t.me/ArtemiyMarushchak" target="_blank" rel="noopener noreferrer">
+        <span>Telegram</span>
+        <strong>@ArtemiyMarushchak</strong>
+      </a>
+      <a class="dev-row" href="tel:+79800893606">
+        <span>Телефон</span>
+        <strong>+7 980 089-36-06</strong>
+      </a>
+      <a class="dev-row" href="mailto:artemiymarushchak@icloud.com">
+        <span>Почта</span>
+        <strong>artemiymarushchak@icloud.com</strong>
+      </a>
+      <a class="dev-row dev-row-site" href="https://artemiy.dev" target="_blank" rel="noopener noreferrer">
+        <span>Сайт</span>
+        <strong>artemiy.dev</strong>
+      </a>
+      <p class="dev-note">Если ты из России — сайт открывай через VPN.</p>
+    </dialog>
 
     <script src="js/main.js" defer></script>
   </body>

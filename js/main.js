@@ -51,6 +51,25 @@
     });
   });
 
+  document.querySelectorAll(".faq-item button").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var answer = button.nextElementSibling;
+      var open = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", open ? "false" : "true");
+      if (answer) answer.hidden = open;
+    });
+  });
+
+  var devPanel = document.querySelector("#dev-panel");
+  var openDev = document.querySelector("[data-open-dev]");
+  var closeDev = document.querySelector("[data-close-dev]");
+  if (devPanel && openDev) {
+    openDev.addEventListener("click", function () { devPanel.showModal(); });
+  }
+  if (devPanel && closeDev) {
+    closeDev.addEventListener("click", function () { devPanel.close(); });
+  }
+
   document.querySelectorAll(".video-frame").forEach(mountVideo);
 
   function mountVideo(frame) {

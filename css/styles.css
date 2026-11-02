@@ -86,7 +86,8 @@
   --accent: #e36b54;
   --on-accent: #ffffff;
   --edge: 40px;
-  --gutter: 16px;
+  --gutter: 24px;
+  --grid: 1200px;
   --radius: 10px;
   --font: "Manrope", "Segoe UI", sans-serif;
   --display: "Unbounded", "Manrope", sans-serif;
@@ -210,8 +211,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .cols {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: 24px;
-  padding-inline: var(--edge);
+  column-gap: var(--gutter);
+  width: min(var(--grid), calc(100% - 2 * var(--edge)));
+  margin-inline: auto;
 }
 
 .cols > main { display: contents; }
@@ -682,8 +684,8 @@ h2 {
 
   .hero-shape { padding-block: 28px; }
 
-  .hero-copy { grid-column: 1 / 7; order: 0; }
-  .hero-photo { grid-column: 7 / 13; order: 0; }
+  .hero-copy { grid-column: 1 / 8; order: 0; }
+  .hero-photo { grid-column: 8 / 13; order: 0; }
 
   .col-6 { grid-column: span 6; }
   .col-7 { grid-column: 1 / 8; }

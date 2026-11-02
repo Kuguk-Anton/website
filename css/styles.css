@@ -221,21 +221,19 @@ h2 {
 }
 
 .video-play {
-  width: 46px;
-  height: 46px;
-  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
   border-radius: var(--radius);
+  background: var(--chip);
+  color: var(--paper);
 }
 
-.video-play::before {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  margin: 14px 0 0 17px;
-  border-style: solid;
-  border-width: 8px 0 8px 12px;
-  border-color: transparent transparent transparent var(--paper);
+.video-play svg {
+  width: 22px;
+  height: 22px;
+  margin-left: 2px;
 }
 
 .video-label {

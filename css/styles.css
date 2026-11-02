@@ -211,9 +211,10 @@ h2 {
 
 .filters button {
   min-height: 40px;
-  padding: 0 14px;
+  padding: 8px 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
+  text-align: left;
 }
 
 .filters button.is-active {

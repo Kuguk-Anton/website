@@ -119,7 +119,7 @@
                 "name": "Какие услуги делает видеограф Антон Кугук?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Съёмка, монтаж и motion: рекламные ролики, контент для бизнеса и личные проекты."
+                  "text": "Репортажи, эдиты, экспертные и разговорные REELS, motion-design и цветокоррекция."
                 }
               },
               {
@@ -179,50 +179,45 @@
             <h2 id="works-title">Видео</h2>
             <div class="filters" role="toolbar" aria-label="Разделы видео">
               <button type="button" class="is-active" data-filter="all" aria-pressed="true">Все</button>
-              <button type="button" data-filter="auto" aria-pressed="false">Авто</button>
-              <button type="button" data-filter="wedding" aria-pressed="false">Свадебное</button>
-              <button type="button" data-filter="reels" aria-pressed="false">Рилс</button>
-              <button type="button" data-filter="ads" aria-pressed="false">Реклама</button>
+              <button type="button" data-filter="reportage" aria-pressed="false">Репортажи</button>
+              <button type="button" data-filter="edits" aria-pressed="false">Эдиты</button>
+              <button type="button" data-filter="reels" aria-pressed="false">Экспертные и разговорные REELS</button>
+              <button type="button" data-filter="motion" aria-pressed="false">Motion-design</button>
+              <button type="button" data-filter="color" aria-pressed="false">Цветокоррекция</button>
             </div>
           </div>
           <!--
             Ссылку ролика пишите в data-src.
-            Раздел — в data-cat: auto, wedding, reels, ads.
+            Раздел — в data-cat: reportage, edits, reels, motion, color.
           -->
-          <article class="col-6 video-card" data-cat="auto">
-            <div class="video-frame" data-src="" data-title="Авто 01">
+          <article class="col-6 video-card" data-cat="reportage">
+            <div class="video-frame" data-src="" data-title="Репортажи">
               <span class="video-play" aria-hidden="true"></span>
-              <span class="video-label">Авто</span>
+              <span class="video-label">Репортажи</span>
             </div>
           </article>
-          <article class="col-6 video-card" data-cat="wedding">
-            <div class="video-frame" data-src="" data-title="Свадебное 01">
+          <article class="col-6 video-card" data-cat="edits">
+            <div class="video-frame" data-src="" data-title="Эдиты">
               <span class="video-play" aria-hidden="true"></span>
-              <span class="video-label">Свадебное</span>
-            </div>
-          </article>
-          <article class="col-6 video-card" data-cat="reels">
-            <div class="video-frame" data-src="" data-title="Рилс 01">
-              <span class="video-play" aria-hidden="true"></span>
-              <span class="video-label">Рилс</span>
-            </div>
-          </article>
-          <article class="col-6 video-card" data-cat="ads">
-            <div class="video-frame" data-src="" data-title="Реклама 01">
-              <span class="video-play" aria-hidden="true"></span>
-              <span class="video-label">Реклама</span>
-            </div>
-          </article>
-          <article class="col-6 video-card" data-cat="auto">
-            <div class="video-frame" data-src="" data-title="Авто 02">
-              <span class="video-play" aria-hidden="true"></span>
-              <span class="video-label">Авто</span>
+              <span class="video-label">Эдиты</span>
             </div>
           </article>
           <article class="col-6 video-card" data-cat="reels">
-            <div class="video-frame" data-src="" data-title="Рилс 02">
+            <div class="video-frame" data-src="" data-title="Экспертные и разговорные REELS">
               <span class="video-play" aria-hidden="true"></span>
-              <span class="video-label">Рилс</span>
+              <span class="video-label">Экспертные и разговорные REELS</span>
+            </div>
+          </article>
+          <article class="col-6 video-card" data-cat="motion">
+            <div class="video-frame" data-src="" data-title="Motion-design">
+              <span class="video-play" aria-hidden="true"></span>
+              <span class="video-label">Motion-design</span>
+            </div>
+          </article>
+          <article class="col-6 video-card" data-cat="color">
+            <div class="video-frame" data-src="" data-title="Цветокоррекция">
+              <span class="video-play" aria-hidden="true"></span>
+              <span class="video-label">Цветокоррекция</span>
             </div>
           </article>
           <p class="col-12 empty-videos" hidden>В этом разделе роликов пока нет.</p>
@@ -234,24 +229,24 @@
           <div class="col-12 section-head">
             <h2 id="prices-title">Стоимость</h2>
           </div>
-          <article class="col-6 col-lg-3 price-card">
-            <h3>Авто</h3>
-            <p>Съёмка и монтаж автомобиля.</p>
+          <article class="col-6 price-card">
+            <h3>Репортажи</h3>
             <p class="price">По запросу</p>
           </article>
-          <article class="col-6 col-lg-3 price-card">
-            <h3>Свадебное</h3>
-            <p>Свадебный ролик.</p>
+          <article class="col-6 price-card">
+            <h3>Эдиты</h3>
             <p class="price">По запросу</p>
           </article>
-          <article class="col-6 col-lg-3 price-card">
-            <h3>Рилс</h3>
-            <p>Короткие ролики.</p>
+          <article class="col-6 price-card">
+            <h3>Экспертные и разговорные REELS</h3>
             <p class="price">По запросу</p>
           </article>
-          <article class="col-6 col-lg-3 price-card">
-            <h3>Реклама</h3>
-            <p>Рекламный ролик и motion.</p>
+          <article class="col-6 price-card">
+            <h3>Motion-design</h3>
+            <p class="price">По запросу</p>
+          </article>
+          <article class="col-6 price-card">
+            <h3>Цветокоррекция</h3>
             <p class="price">По запросу</p>
           </article>
         </div>
@@ -268,7 +263,7 @@
           </article>
           <article class="col-12 faq-item">
             <h3>Какие услуги делает видеограф Антон Кугук?</h3>
-            <p>Съёмка, монтаж и motion: рекламные ролики, контент для бизнеса и личные проекты.</p>
+            <p>Репортажи, эдиты, экспертные и разговорные REELS, motion-design и цветокоррекция.</p>
           </article>
           <article class="col-12 faq-item">
             <h3>Как связаться с Антоном Кугуком?</h3>

@@ -701,6 +701,15 @@ h2 {
   line-height: 1.4;
 }
 
+@media (max-width: 799px) {
+  :root { --edge: 10px; }
+
+  .hero-shape,
+  .reviews-card,
+  .site-footer,
+  .price-row { padding: 10px; }
+}
+
 @media (min-width: 800px) {
   .hero { padding-top: 40px; }
 

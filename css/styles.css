@@ -360,6 +360,7 @@ h2 {
 
 .video-frame {
   position: relative;
+  cursor: pointer;
   display: grid;
   place-items: center;
   aspect-ratio: 16 / 9;

@@ -171,15 +171,32 @@
 
   try { localStorage.removeItem("theme"); } catch (e) {}
 
-  document.querySelectorAll(".video-frame").forEach(mountVideo);
+  document.querySelectorAll(".video-frame").forEach(function (frame) {
+    var src = (frame.getAttribute("data-src") || "").trim();
+    if (!src || frame.classList.contains("is-soon")) return;
+    frame.setAttribute("role", "button");
+    frame.setAttribute("tabindex", "0");
+    frame.setAttribute("aria-label", "Смотреть: " + (frame.getAttribute("data-title") || "видео"));
+    function open() { mountVideo(frame); }
+    frame.addEventListener("click", open);
+    frame.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        open();
+      }
+    });
+  });
 
   function mountVideo(frame) {
     var src = (frame.getAttribute("data-src") || "").trim();
-    if (!src) return;
+    if (!src || frame.classList.contains("is-ready")) return;
 
     var embed = toEmbed(src);
     frame.textContent = "";
     frame.classList.add("is-ready");
+    frame.removeAttribute("role");
+    frame.removeAttribute("tabindex");
+    frame.removeAttribute("aria-label");
 
     if (embed.type === "file") {
       var video = document.createElement("video");
@@ -188,6 +205,7 @@
       video.preload = "metadata";
       video.src = embed.url;
       frame.appendChild(video);
+      video.play().catch(function () {});
       return;
     }
 

@@ -64,10 +64,72 @@
   var openDev = document.querySelector("[data-open-dev]");
   var closeDev = document.querySelector("[data-close-dev]");
   if (devPanel && openDev) {
-    openDev.addEventListener("click", function () { devPanel.showModal(); });
-  }
-  if (devPanel && closeDev) {
-    closeDev.addEventListener("click", function () { devPanel.close(); });
+    document.body.appendChild(devPanel);
+    var pinned = false;
+    var openTimer = 0;
+    var closeTimer = 0;
+
+    function placeDev() {
+      var rect = openDev.getBoundingClientRect();
+      var width = Math.min(400, window.innerWidth - 24);
+      devPanel.style.width = width + "px";
+      var height = devPanel.offsetHeight;
+      var left = Math.max(12, Math.min(rect.left, window.innerWidth - width - 12));
+      var top = rect.top - height - 10;
+      if (top < 12) top = Math.min(rect.bottom + 10, window.innerHeight - height - 12);
+      devPanel.style.left = left + "px";
+      devPanel.style.top = top + "px";
+    }
+
+    function showDev() {
+      devPanel.hidden = false;
+      openDev.setAttribute("aria-expanded", "true");
+      placeDev();
+    }
+
+    function hideDev() {
+      pinned = false;
+      devPanel.hidden = true;
+      openDev.setAttribute("aria-expanded", "false");
+    }
+
+    openDev.addEventListener("mouseenter", function () {
+      window.clearTimeout(closeTimer);
+      openTimer = window.setTimeout(showDev, 160);
+    });
+    openDev.addEventListener("mouseleave", function () {
+      window.clearTimeout(openTimer);
+      if (pinned) return;
+      closeTimer = window.setTimeout(hideDev, 220);
+    });
+    devPanel.addEventListener("mouseenter", function () { window.clearTimeout(closeTimer); });
+    devPanel.addEventListener("mouseleave", function () {
+      if (pinned) return;
+      closeTimer = window.setTimeout(hideDev, 220);
+    });
+    openDev.addEventListener("click", function (event) {
+      event.preventDefault();
+      if (!devPanel.hidden && pinned) hideDev();
+      else {
+        pinned = true;
+        showDev();
+      }
+    });
+    if (closeDev) closeDev.addEventListener("click", hideDev);
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") hideDev();
+    });
+    document.addEventListener("click", function (event) {
+      if (devPanel.hidden) return;
+      if (event.target === openDev || openDev.contains(event.target) || devPanel.contains(event.target)) return;
+      hideDev();
+    });
+    window.addEventListener("resize", function () {
+      if (!devPanel.hidden) placeDev();
+    });
+    window.addEventListener("scroll", function () {
+      if (!devPanel.hidden) placeDev();
+    }, true);
   }
 
   document.querySelectorAll(".video-frame").forEach(mountVideo);

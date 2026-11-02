@@ -712,7 +712,13 @@ h2 {
 @media (max-width: 799px) {
   :root { --edge: 10px; }
 
-  .hero-shape,
+  .hero-shape {
+    padding: 10px 10px 0;
+    row-gap: 0;
+  }
+
+  .hero-copy { padding: 15px 5px 15px; }
+
   .reviews-card,
   .site-footer,
   .price-row { padding: 10px; }

@@ -259,6 +259,7 @@ h1 {
 }
 
 .btn svg {
+  order: 1;
   width: 16px;
   height: 16px;
   flex: none;
@@ -661,6 +662,10 @@ h2 {
   }
 
   .hero-copy { padding: 15px 5px 15px; }
+
+  .hero-actions { flex-direction: column; align-items: stretch; }
+
+  .hero-actions .btn { width: 100%; }
 
   .site-footer,
   .price-row { padding: 10px; }

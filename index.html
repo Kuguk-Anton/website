@@ -139,78 +139,120 @@
   <body>
     <a class="skip" href="#content">К содержанию</a>
 
-    <header class="site-header">
-      <div class="grid header-grid">
-        <a class="col-4 wordmark" href="#top">Кугук</a>
-        <nav class="col-8 nav" aria-label="Разделы страницы">
-          <a href="#works">Видео</a>
-          <a href="#faq">Вопросы</a>
-          <a href="#discuss">Обсудить</a>
-        </nav>
-      </div>
-    </header>
-
     <main id="content">
       <section class="hero" id="top" aria-labelledby="person-name">
-        <div class="grid">
-          <figure class="col-12 col-lg-6 hero-photo">
-            <img
-              src="assets/anton.jpg"
-              width="470"
-              height="400"
-              alt="Портрет Антона Кугука, видеографа из Москвы"
-              fetchpriority="high"
-              decoding="async"
-            >
-            <figcaption>DoP / edit · Москва</figcaption>
-          </figure>
-          <div class="col-12 col-lg-6 hero-copy">
-            <p class="eyebrow">Видеограф в Москве</p>
-            <h1 id="person-name">Антон<br>Кугук</h1>
-            <p class="usp">Съёмка, монтаж и motion в одних руках. Рекламные ролики, видео для бизнеса и личные проекты.</p>
-            <p class="disciplines">Съёмка / монтаж / motion</p>
-          </div>
-        </div>
+        <img
+          class="avatar"
+          src="assets/anton.jpg"
+          width="470"
+          height="400"
+          alt="Портрет Антона Кугука, видеографа из Москвы"
+          fetchpriority="high"
+          decoding="async"
+        >
+        <h1 id="person-name">Антон Кугук</h1>
+        <p class="usp">Съёмка, монтаж и motion. Москва.</p>
+        <ul class="socials">
+          <li>
+            <a href="https://t.me/kugukanton" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              <span class="sr-only">, откроется в новой вкладке</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/kuguk.mov/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" aria-describedby="meta-note">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><circle cx="12" cy="12" r="3.6"/><path d="M17.4 6.7h.01"/></svg>
+              <span class="sr-only">, откроется в новой вкладке</span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+79034316353" aria-label="Позвонить">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v2.2a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 1.2h2.2a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.1 9.1a16 16 0 0 0 6 6l1.5-1.5a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2.2Z"/></svg>
+            </a>
+          </li>
+        </ul>
       </section>
 
       <section id="works" aria-labelledby="works-title">
         <div class="grid">
           <div class="col-12 section-head">
-            <p class="eyebrow">Работы</p>
             <h2 id="works-title">Видео</h2>
+            <div class="filters" role="toolbar" aria-label="Разделы видео">
+              <button type="button" class="is-active" data-filter="all" aria-pressed="true">Все</button>
+              <button type="button" data-filter="auto" aria-pressed="false">Авто</button>
+              <button type="button" data-filter="wedding" aria-pressed="false">Свадебное</button>
+              <button type="button" data-filter="reels" aria-pressed="false">Рилс</button>
+              <button type="button" data-filter="ads" aria-pressed="false">Реклама</button>
+            </div>
           </div>
           <!--
             Ссылку ролика пишите в data-src.
-            YouTube, Vimeo или прямой mp4/webm.
-            Пример: data-src="https://www.youtube.com/watch?v=..."
+            Раздел — в data-cat: auto, wedding, reels, ads.
           -->
-          <article class="col-6 video-card">
-            <div class="video-frame" data-src="" data-title="Видео 01">
-              <span class="video-index">01</span>
+          <article class="col-6 video-card" data-cat="auto">
+            <div class="video-frame" data-src="" data-title="Авто 01">
               <span class="video-play" aria-hidden="true"></span>
-              <span class="video-label">Ролик 01</span>
+              <span class="video-label">Авто</span>
             </div>
           </article>
-          <article class="col-6 video-card">
-            <div class="video-frame" data-src="" data-title="Видео 02">
-              <span class="video-index">02</span>
+          <article class="col-6 video-card" data-cat="wedding">
+            <div class="video-frame" data-src="" data-title="Свадебное 01">
               <span class="video-play" aria-hidden="true"></span>
-              <span class="video-label">Ролик 02</span>
+              <span class="video-label">Свадебное</span>
             </div>
           </article>
-          <article class="col-6 video-card">
-            <div class="video-frame" data-src="" data-title="Видео 03">
-              <span class="video-index">03</span>
+          <article class="col-6 video-card" data-cat="reels">
+            <div class="video-frame" data-src="" data-title="Рилс 01">
               <span class="video-play" aria-hidden="true"></span>
-              <span class="video-label">Ролик 03</span>
+              <span class="video-label">Рилс</span>
             </div>
           </article>
-          <article class="col-6 video-card">
-            <div class="video-frame" data-src="" data-title="Видео 04">
-              <span class="video-index">04</span>
+          <article class="col-6 video-card" data-cat="ads">
+            <div class="video-frame" data-src="" data-title="Реклама 01">
               <span class="video-play" aria-hidden="true"></span>
-              <span class="video-label">Ролик 04</span>
+              <span class="video-label">Реклама</span>
             </div>
+          </article>
+          <article class="col-6 video-card" data-cat="auto">
+            <div class="video-frame" data-src="" data-title="Авто 02">
+              <span class="video-play" aria-hidden="true"></span>
+              <span class="video-label">Авто</span>
+            </div>
+          </article>
+          <article class="col-6 video-card" data-cat="reels">
+            <div class="video-frame" data-src="" data-title="Рилс 02">
+              <span class="video-play" aria-hidden="true"></span>
+              <span class="video-label">Рилс</span>
+            </div>
+          </article>
+          <p class="col-12 empty-videos" hidden>В этом разделе роликов пока нет.</p>
+        </div>
+      </section>
+
+      <section id="prices" aria-labelledby="prices-title">
+        <div class="grid">
+          <div class="col-12 section-head">
+            <h2 id="prices-title">Стоимость</h2>
+          </div>
+          <article class="col-6 col-lg-3 price-card">
+            <h3>Авто</h3>
+            <p>Съёмка и монтаж автомобиля.</p>
+            <p class="price">По запросу</p>
+          </article>
+          <article class="col-6 col-lg-3 price-card">
+            <h3>Свадебное</h3>
+            <p>Свадебный ролик.</p>
+            <p class="price">По запросу</p>
+          </article>
+          <article class="col-6 col-lg-3 price-card">
+            <h3>Рилс</h3>
+            <p>Короткие ролики.</p>
+            <p class="price">По запросу</p>
+          </article>
+          <article class="col-6 col-lg-3 price-card">
+            <h3>Реклама</h3>
+            <p>Рекламный ролик и motion.</p>
+            <p class="price">По запросу</p>
           </article>
         </div>
       </section>
@@ -218,7 +260,6 @@
       <section id="faq" aria-labelledby="faq-title">
         <div class="grid">
           <div class="col-12 section-head">
-            <p class="eyebrow">Коротко</p>
             <h2 id="faq-title">Частые вопросы</h2>
           </div>
           <article class="col-12 faq-item">
@@ -240,26 +281,10 @@
     <footer id="discuss">
       <div class="grid">
         <div class="col-12 footer-cta">
-          <p class="eyebrow">Контакт</p>
           <h2>Есть задача — давайте обсудим</h2>
-          <p class="phone-xl"><a href="tel:+79034316353">+7 903 431-63-53</a></p>
-          <div class="actions">
-            <a class="btn btn-primary" href="https://t.me/kugukanton" target="_blank" rel="noopener noreferrer">
-              Написать в Telegram
-              <span class="sr-only">, откроется в новой вкладке</span>
-            </a>
-            <a class="btn btn-ghost" href="tel:+79034316353">Позвонить</a>
-            <button class="btn btn-ghost" type="button" data-copy-phone="+7 903 431-63-53">Скопировать номер</button>
-            <a class="btn btn-ghost" href="anton-kuguk.vcf" download>Сохранить контакт</a>
-          </div>
-          <p class="instagram-line">
-            <a href="https://www.instagram.com/kuguk.mov/" target="_blank" rel="noopener noreferrer" aria-describedby="meta-note">Instagram* — @kuguk.mov</a>
-            <a href="https://t.me/kugukanton_portfolio/5" target="_blank" rel="noopener noreferrer">Отзывы</a>
-          </p>
           <p id="meta-note" class="legal">
             * Компания Meta (соцсети Facebook и Instagram) признана экстремистской, и её деятельность запрещена в РФ.
           </p>
-          <p class="footer-meta">Антон Кугук · видеограф, Москва · <span data-year>2026</span></p>
         </div>
       </div>
     </footer>

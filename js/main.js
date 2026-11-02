@@ -32,6 +32,25 @@
     });
   }
 
+  document.querySelectorAll("[data-filter]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var filter = button.getAttribute("data-filter");
+      var visible = 0;
+      document.querySelectorAll("[data-filter]").forEach(function (item) {
+        var active = item === button;
+        item.classList.toggle("is-active", active);
+        item.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+      document.querySelectorAll(".video-card").forEach(function (card) {
+        var show = filter === "all" || card.getAttribute("data-cat") === filter;
+        card.hidden = !show;
+        if (show) visible += 1;
+      });
+      var empty = document.querySelector(".empty-videos");
+      if (empty) empty.hidden = visible !== 0;
+    });
+  });
+
   document.querySelectorAll(".video-frame").forEach(mountVideo);
 
   function mountVideo(frame) {

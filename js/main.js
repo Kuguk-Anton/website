@@ -71,9 +71,12 @@
     var empty = document.querySelector(".empty-videos");
     var loadMore = document.querySelector("[data-load-more]");
     var mobileQuery = window.matchMedia("(max-width: 799px)");
-    var pageSize = 5;
-    var shown = pageSize;
     var currentFilter = "all";
+    var shown = 0;
+
+    function pageSize() {
+      return mobileQuery.matches ? 5 : 6;
+    }
 
     function matchingCards() {
       return cards.filter(function (card) {
@@ -83,19 +86,32 @@
 
     function applyVideos() {
       var match = matchingCards();
-      var limit = mobileQuery.matches ? shown : match.length;
+      if (!shown) shown = pageSize();
+      var limit = Math.min(shown, match.length);
       cards.forEach(function (card) {
         var index = match.indexOf(card);
         card.hidden = !(index > -1 && index < limit);
       });
       if (empty) empty.hidden = match.length !== 0;
-      if (loadMore) loadMore.hidden = !(mobileQuery.matches && match.length > shown);
+      if (!loadMore) return;
+      if (match.length <= pageSize()) {
+        loadMore.hidden = true;
+        return;
+      }
+      loadMore.hidden = false;
+      if (shown >= match.length) {
+        loadMore.textContent = "Скрыть";
+        loadMore.setAttribute("data-mode", "collapse");
+      } else {
+        loadMore.textContent = "Загрузить ещё";
+        loadMore.setAttribute("data-mode", "expand");
+      }
     }
 
     document.querySelectorAll("[data-filter]").forEach(function (button) {
       button.addEventListener("click", function () {
         currentFilter = button.getAttribute("data-filter") || "all";
-        shown = pageSize;
+        shown = pageSize();
         document.querySelectorAll("[data-filter]").forEach(function (item) {
           var active = item === button;
           item.classList.toggle("is-active", active);
@@ -107,23 +123,27 @@
 
     if (loadMore) {
       loadMore.addEventListener("click", function () {
-        shown += pageSize;
+        if (loadMore.getAttribute("data-mode") === "collapse") {
+          shown = pageSize();
+        } else {
+          shown += pageSize();
+        }
         applyVideos();
       });
+    }
+
+    function onViewportChange() {
+      shown = pageSize();
+      applyVideos();
     }
 
     if (mobileQuery.addEventListener) {
-      mobileQuery.addEventListener("change", function () {
-        shown = pageSize;
-        applyVideos();
-      });
+      mobileQuery.addEventListener("change", onViewportChange);
     } else if (mobileQuery.addListener) {
-      mobileQuery.addListener(function () {
-        shown = pageSize;
-        applyVideos();
-      });
+      mobileQuery.addListener(onViewportChange);
     }
 
+    shown = pageSize();
     applyVideos();
   })();
 

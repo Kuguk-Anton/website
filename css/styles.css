@@ -83,7 +83,7 @@
   --line: rgba(255, 255, 255, 0.12);
   --ink: #0c0c0c;
   --chip: #222222;
-  --accent: #e36b54;
+  --accent: #3d82b8;
   --on-accent: #ffffff;
   --edge: 40px;
   --gutter: 24px;
@@ -234,7 +234,7 @@ h1 {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 18%;
   border-radius: var(--radius);
 }
 
@@ -738,14 +738,20 @@ h2 {
   .hero-copy .usp { order: 2; }
   .hero-copy .hero-actions { order: 3; }
 
-  .hero-actions { flex-wrap: nowrap; }
+  .hero-actions { flex-wrap: nowrap; gap: 10px; }
 
   .hero-actions .btn {
     flex: 1 1 0;
     min-width: 0;
-    padding-inline: 8px;
+    min-height: 52px;
+    padding-inline: 10px;
     white-space: nowrap;
-    font-size: clamp(0.72rem, 3.15vw, 0.92rem);
+    font-size: clamp(0.84rem, 3.5vw, 0.98rem);
+  }
+
+  .hero-actions .btn svg {
+    width: 18px;
+    height: 18px;
   }
 
   .site-footer,

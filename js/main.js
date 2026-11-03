@@ -66,24 +66,66 @@
     });
   }
 
-  document.querySelectorAll("[data-filter]").forEach(function (button) {
-    button.addEventListener("click", function () {
-      var filter = button.getAttribute("data-filter");
-      var visible = 0;
-      document.querySelectorAll("[data-filter]").forEach(function (item) {
-        var active = item === button;
-        item.classList.toggle("is-active", active);
-        item.setAttribute("aria-pressed", active ? "true" : "false");
+  (function setupVideoFilters() {
+    var cards = Array.prototype.slice.call(document.querySelectorAll(".video-card"));
+    var empty = document.querySelector(".empty-videos");
+    var loadMore = document.querySelector("[data-load-more]");
+    var mobileQuery = window.matchMedia("(max-width: 799px)");
+    var pageSize = 5;
+    var shown = pageSize;
+    var currentFilter = "all";
+
+    function matchingCards() {
+      return cards.filter(function (card) {
+        return currentFilter === "all" || card.getAttribute("data-cat") === currentFilter;
       });
-      document.querySelectorAll(".video-card").forEach(function (card) {
-        var show = filter === "all" || card.getAttribute("data-cat") === filter;
-        card.hidden = !show;
-        if (show) visible += 1;
+    }
+
+    function applyVideos() {
+      var match = matchingCards();
+      var limit = mobileQuery.matches ? shown : match.length;
+      cards.forEach(function (card) {
+        var index = match.indexOf(card);
+        card.hidden = !(index > -1 && index < limit);
       });
-      var empty = document.querySelector(".empty-videos");
-      if (empty) empty.hidden = visible !== 0;
+      if (empty) empty.hidden = match.length !== 0;
+      if (loadMore) loadMore.hidden = !(mobileQuery.matches && match.length > shown);
+    }
+
+    document.querySelectorAll("[data-filter]").forEach(function (button) {
+      button.addEventListener("click", function () {
+        currentFilter = button.getAttribute("data-filter") || "all";
+        shown = pageSize;
+        document.querySelectorAll("[data-filter]").forEach(function (item) {
+          var active = item === button;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+        applyVideos();
+      });
     });
-  });
+
+    if (loadMore) {
+      loadMore.addEventListener("click", function () {
+        shown += pageSize;
+        applyVideos();
+      });
+    }
+
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener("change", function () {
+        shown = pageSize;
+        applyVideos();
+      });
+    } else if (mobileQuery.addListener) {
+      mobileQuery.addListener(function () {
+        shown = pageSize;
+        applyVideos();
+      });
+    }
+
+    applyVideos();
+  })();
 
   document.querySelectorAll(".faq-item button").forEach(function (button) {
     button.addEventListener("click", function () {

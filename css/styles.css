@@ -436,6 +436,17 @@ h2 {
 
 .empty-videos { margin: 0; color: var(--muted); }
 
+.load-more-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.load-more-videos {
+  width: min(100%, 360px);
+  min-height: 46px;
+}
+
 .price-row {
   display: grid;
   grid-template-columns: auto 1fr;
